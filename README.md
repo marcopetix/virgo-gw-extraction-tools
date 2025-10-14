@@ -10,6 +10,7 @@ Small, focused repository for GW/Virgo data utilities and scripts.
 - Everything else will evolve as the project grows.
 
 ## Layout
+```bash
 virgo-data-scripts/ \
 ├── channels/ \
 │ ├── README.md \
@@ -26,6 +27,7 @@ virgo-data-scripts/ \
 └── .github/ \
 └── workflows/ \
 └── ci.yml \
+```
 
 ## Quickstart
 
@@ -38,10 +40,11 @@ python -m pip install -U pip
 pip install -r requirements.txt
 
 # 3) Run the example script
-python scripts/gwf_to_h5.py \\
+python scripts/gwf_to_h5_batch.py \\
   --ffl raw \\
   --start "2025-08-14 00:00:00" \\
   --duration 1h \\
   --channels-file channels/aux_channels.txt \\
   --out dataset/aux_1h/dataset.h5 \\
   --nproc 4 --scan-limit 3 --verbose 1
+```
