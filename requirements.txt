@@ -1,0 +1,4 @@
+gwpy
+gwdama
+h5py
+numpy
