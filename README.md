@@ -13,7 +13,6 @@ Small, focused repository for GW/Virgo data utilities and scripts.
 ```bash
 virgo-data-scripts/ \
 ├── channels/ \
-│ ├── README.md \
 │ ├── all_channels.txt \
 │ ├── aux_channels.txt \
 │ ├── Sa_channels.txt \
@@ -23,10 +22,7 @@ virgo-data-scripts/ \
 ├── .gitignore \
 ├── LICENSE \
 ├── README.md \
-├── requirements.txt \
-└── .github/ \
-└── workflows/ \
-└── ci.yml \
+└── requirements.txt \
 ```
 
 ## Quickstart

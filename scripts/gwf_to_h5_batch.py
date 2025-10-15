@@ -182,13 +182,13 @@ def validate_channels(ffl_path: str, start_gps: float, end_gps: float, requested
                 inv = frchannels_list(frchannels_path, fp)
                 inventory |= inv
                 if verbose >= 2:
-                    print(f"Scanned {fp}: +{len(inv)} channels (union={len(inventory)})")
+                    print(f"\nScanned {fp}: +{len(inv)} channels (union={len(inventory)})")
             except subprocess.CalledProcessError as e:
                 if verbose >= 1:
-                    print(f"[warn] FrChannels failed on {fp}: {e}")
+                    print(f"\n[warn] FrChannels failed on {fp}: {e}")
             except Exception as e:
                 if verbose >= 1:
-                    print(f"[warn] Skipping {fp}: {e}")
+                    print(f"\n[warn] Skipping {fp}: {e}")
 
     # preserve order of requested
     req_ordered = list(dict.fromkeys(requested))
@@ -229,16 +229,16 @@ def extract_batch(channels: List[str], ffl_path: str, start_gps: float, end_gps:
             missing_set = set(channels) - set(got)
             unavailable.extend(sorted(missing_set))
             if verbose >= 1:
-                print("[batch] Batch read (lalframe) succeeded.")
+                print("\n[batch] Batch read (lalframe) succeeded.")
         else:
             # Single-TS path (shouldn't happen if len(channels) > 1)
             dama.from_TimeSeries(tsd, dts_key=channels[0], compression="gzip")
             available.append(channels[0])
             if verbose >= 1:
-                print("[batch] Batch read (lalframe) returned single series.")
+                print("\n[batch] Batch read (lalframe) returned single series.")
     except Exception as e:
         if verbose >= 1:
-            print(f"[batch] Batch read failed: {e}")
+            print(f"\n[batch] Batch read failed: {e}")
         # If batch fails entirely, mark all requested as unavailable_from_extraction
         unavailable.extend(channels)
 
