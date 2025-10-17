@@ -345,7 +345,7 @@ def main():
         print(f"- Unavailable: {len(combined_missing)} (see {missing_list_path})")
         print(f"- Size on disk: {size_mb:.2f} MB")
         print(f"- Output HDF5 file: {out_h5}")
-        print(f"- Elapsed time: {elapsed:.2f} s")
+        print(f"- Elapsed time: {elapsed:.2f} s \n")
 
     summary_path = Path(base_dir, f"{base_name}_summary.txt")
     with open(summary_path, "w") as f:
